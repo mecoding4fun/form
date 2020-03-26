@@ -10,6 +10,9 @@ var val4;
 var database;
 var user;
 var sub;
+var logo,logo_img;
+
+function preload(){  logo_img = loadImage("gamer2.png"); }
 
 function setup(){
   createCanvas(windowWidth,windowHeight);
@@ -28,7 +31,10 @@ function setup(){
   user = new User
   sub = createButton('Submit');
   sub.position(width/2-10,height/2+80);
-  sub.mousePressed(submit)
+  sub.mousePressed(submit);
+
+  logo = createSprite(width/2+300,150,1,1);
+  logo.addImage("log",logo_img);
 }
 
 function draw(){
@@ -43,7 +49,7 @@ function draw(){
   user.phone = val2;
   user.pincode = val3;
   user.passcode = val4;
-
+drawSprites();
 
   
 }
